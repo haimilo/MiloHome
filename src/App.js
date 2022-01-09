@@ -4,6 +4,7 @@ import DropDown from './components/DropDown';
 import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
 import Navbar from './components/Navbar';
+import NewOffer from './components/NewOffer';
 import { InfoData, InfoDataTwo, InfoDataThree } from './data/infoData';
 import { SliderData } from './data/SliderData';
 import GlobalStyle from './globalStyle';
@@ -23,6 +24,7 @@ function App() {
         <DropDown isOpen={isOpen} toggle={toggle} />
         <Hero slides={SliderData} />
         <InfoSection {...InfoData} />
+        <NewOffer />
         <ContentOption {...InfoDataThree} />
         <InfoSection {...InfoDataTwo} />
       </>
