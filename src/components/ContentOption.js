@@ -5,16 +5,19 @@ import { Button } from './Button';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 
-const Section = styled.section`
+const Section = styled.div`
     width: 100%;
     height: 100%;
     padding: 4rem 0rem;
+    background-color: #000;
 `;
 const Container = styled.div`
+    background-color: #fff;
     padding: 3rem calc((100vw - 1300px) /2);
     display: flex;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 800px;
+    justify-content: center;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -46,13 +49,13 @@ const ColumnRight = styled.div`
     align-items: center;
 
     img {
-        width: 100%;
-        height: 100%;
+        width: 120%;
+        height: 140%;
         object-fit: cover;
 
         @media screen and (max-width: 768px) {
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
         }
     }
 `;
@@ -61,10 +64,10 @@ const Arrow = styled(IoMdArrowRoundForward)`
     margin-left: 0.5rem;
 `;
 
-function InfoSection({ heading, paragraphOne, paragraphTwo, label, reverse, image }) {
+function ContentOption({ heading, paragraphOne, paragraphTwo, label, reverse, image }) {
     useEffect(() => {
         Aos.init({ duration: 1000 });
-    }, [])
+    }, []);
     return (
         <Section>
             <Container data-aos="fade">
@@ -72,17 +75,17 @@ function InfoSection({ heading, paragraphOne, paragraphTwo, label, reverse, imag
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
                     <p>{paragraphTwo}</p>
-                    <Button data-aos="fade-right" to="/homes" primary="true">
+                    <Button data-aos="fade-up" to="/homes">
                         {label}
                         <Arrow />
                     </Button>
                 </ColumnLeft>
                 <ColumnRight reverse={reverse}>
-                    <img data-aos="zoom-out" src={image} alt="home" />
+                    <img data-aos="zoom-out" src={image} alt="interior" />
                 </ColumnRight>
             </Container>
         </Section>
     )
 }
 
-export default InfoSection
+export default ContentOption
