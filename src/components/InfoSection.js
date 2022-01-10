@@ -30,7 +30,7 @@ const ColumnLeft = styled.div`
     order: ${({ reverse }) => (reverse ? '1' : '2')};
 
     h1 {
-        margi-bottom: 1rem;
+        margin-bottom: 1rem;
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
 
@@ -63,7 +63,7 @@ const Arrow = styled(IoMdArrowRoundForward)`
 
 function InfoSection({ heading, paragraphOne, paragraphTwo, label, reverse, image }) {
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 800 });
     }, [])
     return (
         <Section>

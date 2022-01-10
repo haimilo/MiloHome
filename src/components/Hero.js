@@ -3,12 +3,15 @@ import styled, { css } from 'styled-components/macro';
 import { Button } from '../components/Button';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const HeroSection = styled.section`
     height: 100vh;
     max-height: 1100px;
     position: relative;
     overflow: hidden;
+    background: rgba(64, 64, 64, 0.8);
 `;
 
 const HeroWrapper = styled.div`
@@ -121,12 +124,18 @@ const Hero = ({ slides }) => {
     const [current, setCurrent] = useState(0);
     const length = slides.length;
     const timeout = useRef(null);
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            easing: 'ease-in-quart',
+        })
+    }, []);
 
     useEffect(() => {
         const nextSlide = () => {
             setCurrent(current === length - 1 ? 0 : current + 1);
         }
-        timeout.current = setTimeout(nextSlide, 3000);
+        timeout.current = setTimeout(nextSlide, 5000);
         return function () {
             if (timeout.current) {
                 clearTimeout(timeout.current);
@@ -158,9 +167,9 @@ const Hero = ({ slides }) => {
             <HeroWrapper>
                 {slides.map((slide, index) => {
                     return (
-                        <HeroSlide key={index}>
+                        <HeroSlide className={index === current ? 'slide active' : 'slide'} key={index}>
                             {index === current && (
-                                <HeroSlider>
+                                <HeroSlider data-aos="zoom-out">
                                     <HeroImage src={slide.image} alt={slide.alt} />
                                     <HeroContent>
                                         <h1>{slide.title}</h1>

@@ -33,7 +33,7 @@ const ColumnLeft = styled.div`
     order: ${({ reverse }) => (reverse ? '1' : '2')};
 
     h1 {
-        margi-bottom: 1rem;
+        margin-bottom: 1rem;
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
 
@@ -49,14 +49,9 @@ const ColumnRight = styled.div`
     align-items: center;
 
     img {
-        width: 120%;
-        height: 140%;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            height: 100%;
-        }
     }
 `;
 
@@ -64,9 +59,11 @@ const Arrow = styled(IoMdArrowRoundForward)`
     margin-left: 0.5rem;
 `;
 
+
+
 function ContentOption({ heading, paragraphOne, paragraphTwo, label, reverse, image }) {
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 800 });
     }, []);
     return (
         <Section>

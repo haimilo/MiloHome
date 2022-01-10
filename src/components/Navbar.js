@@ -1,11 +1,12 @@
 //rafce
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { menuData } from '../data/MenuData';
 import { Button } from '../components/Button';
 import Bars from '../images/bars.svg';
 // import { FaBars } from 'react-icons/fa';
+import '../css/NavBar.css';
 
 const Nav = styled.nav`
     height: 60px;
@@ -15,7 +16,7 @@ const Nav = styled.nav`
     z-index: 100;
     position: fixed;
     width: 100%;
-    background: rgba(64, 64, 64, 0.5);
+    transition: 1s ease;
 `;
 
 const NavLink = css`
@@ -66,6 +67,11 @@ const NavMenu = styled.div`
 `;
 const NavMenuLinks = styled(Link)`
     ${NavLink}
+    transition: 1s ease;
+
+    &:hover {
+        color: #cd853f;
+    }
 `;
 const NavBtn = styled.div`
     display: none;
@@ -78,8 +84,19 @@ const NavBtn = styled.div`
 `;
 
 const Navbar = ({ toggle }) => {
+    const [navBar, setNavBar] = useState(false);
+    const changeBackground = () => {
+        console.log(window.scrollY);
+        let scrollY = window.scrollY;
+        if (scrollY >= 60) {
+            setNavBar(true);
+        } else {
+            setNavBar(false);
+        }
+    }
+    window.addEventListener('scroll', changeBackground);
     return (
-        <Nav>
+        <Nav className={navBar ? 'navbar active' : 'navbar'}>
             <Logo to="/">MiloHome</Logo>
             <MenuBars onClick={toggle} />
             <NavMenu>
