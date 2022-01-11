@@ -86,7 +86,7 @@ const NavBtn = styled.div`
 const Navbar = ({ toggle }) => {
     const [navBar, setNavBar] = useState(false);
     const changeBackground = () => {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
         let scrollY = window.scrollY;
         if (scrollY >= 60) {
             setNavBar(true);

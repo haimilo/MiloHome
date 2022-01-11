@@ -11,7 +11,6 @@ const HeroSection = styled.section`
     max-height: 1100px;
     position: relative;
     overflow: hidden;
-    background: rgba(64, 64, 64, 0.8);
 `;
 
 const HeroWrapper = styled.div`
@@ -22,6 +21,7 @@ const HeroWrapper = styled.div`
     align-items: center;
     overflow: hidden;
     position: relative;
+    background-image: linear-gradient(to right, rgba(64,64,64,0.3), rgba(64,64,64,0.8));
 `;
 
 const HeroSlide = styled.div`
@@ -126,8 +126,8 @@ const Hero = ({ slides }) => {
     const timeout = useRef(null);
     useEffect(() => {
         Aos.init({
-            duration: 1000,
-            easing: 'ease-in-quart',
+            duration: 1500,
+            easing: 'ease-in-out',
         })
     }, []);
 

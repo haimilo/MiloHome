@@ -122,6 +122,7 @@ const ConnectInput = styled.div`
         outline: none;
         border: none;
         padding: 0 18px;
+        width: 50%;
     }
 `;
 const ContactWrapper = styled.div`
