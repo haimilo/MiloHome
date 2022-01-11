@@ -7,7 +7,6 @@ import InfoSection from './components/InfoSection';
 import Navbar from './components/Navbar';
 import NewOffer from './components/NewOffer';
 import { InfoData, InfoDataTwo, InfoDataThree, InfoDataFour } from './data/infoData';
-import { footerData } from './data/MenuData';
 import { SliderData } from './data/SliderData';
 import GlobalStyle from './globalStyle';
 

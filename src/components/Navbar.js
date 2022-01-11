@@ -30,15 +30,15 @@ const NavLink = css`
 
 const Logo = styled(Link)`
     ${NavLink};
-    font-style: italic;
+    transition: 1s ease;
+    font-weight: bolder;
+    
+    &:hover {
+        color: #cd853f;
+        letter-spacing: 1px;
+    }
 `;
-// const MenuBars = styled(FaBars)`
-//     display: none;
 
-//     @media screen and (min-width: 768px) {
-//         display: block;
-//     }
-// `;
 const MenuBars = styled.i`
     display: block;
     background-image: url(${Bars});

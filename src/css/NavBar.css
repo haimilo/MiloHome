@@ -5,3 +5,8 @@
 .navbar.active {
     background: rgba(64,64,64,0.9);
 }
+
+Logo {
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
