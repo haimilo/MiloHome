@@ -124,6 +124,11 @@ const ConnectInput = styled.div`
         padding: 0 18px;
         width: 50%;
     }
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+
 `;
 const ContactWrapper = styled.div`
     display: flex;
